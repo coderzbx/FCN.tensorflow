@@ -10,7 +10,7 @@ import TensorflowUtils as utils
 
 def read_dataset(data_dir):
     pickle_filename = "MapillarySet.pickle"
-    MapillarySet_folder = "/media/kddev/DATA1/mapillary"
+    MapillarySet_folder = "/data2/learning_data/Mapillary-vistas-dataset-v1.0"
     pickle_filepath = os.path.join(data_dir, pickle_filename)
     if not os.path.exists(pickle_filepath):
         result = create_image_lists(os.path.join(data_dir, MapillarySet_folder))

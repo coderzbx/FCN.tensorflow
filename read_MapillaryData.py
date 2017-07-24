@@ -10,7 +10,7 @@ import TensorflowUtils as utils
 
 def read_dataset(data_dir):
     pickle_filename = "MapillarySet.pickle"
-    MapillarySet_folder = "/data2/learning_data/Mapillary-vistas-dataset-v1.0"
+    MapillarySet_folder = "/media/kddev/DATA/mapillary"
     pickle_filepath = os.path.join(data_dir, pickle_filename)
     if not os.path.exists(pickle_filepath):
         result = create_image_lists(os.path.join(data_dir, MapillarySet_folder))
@@ -47,7 +47,7 @@ def create_image_lists(image_dir):
         else:
             for f in file_list:
                 filename = os.path.splitext(f.split("/")[-1])[0]
-                annotation_file = os.path.join(image_dir, directory, "labels", filename + '.png')
+                annotation_file = os.path.join(image_dir, directory, "instances", filename + '.png')
                 if os.path.exists(annotation_file):
                     record = {'image': f, 'annotation': annotation_file, 'filename': filename}
                     image_list[directory].append(record)

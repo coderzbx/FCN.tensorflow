@@ -76,7 +76,8 @@ class BatchDatset:
             self.batch_offset = batch_size
 
         end = self.batch_offset
-        return self.images[start:end], self.annotations[start:end]
+        self.images[start]
+        return self.images[start:end], self.annotations[start:end] , 1920, 1080
 
     def get_random_batch(self, batch_size):
         indexes = np.random.randint(0, self.images.shape[0], size=[batch_size]).tolist()
